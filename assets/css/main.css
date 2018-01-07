@@ -1914,6 +1914,9 @@ body {
     max-width: 250px;
     margin: auto;
 }
+.slider--item a {
+    outline: none;
+}
 .slider--item-image {
     position: relative;
 }
