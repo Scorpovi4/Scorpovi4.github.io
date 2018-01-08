@@ -804,16 +804,8 @@ body {
     list-style: none
 }
 
-.intro--options > a {
-    max-width: 250px;
-    text-decoration: none;
-    color: #282828;
-    -webkit-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out
-}
-
-.intro--options > a:hover {
-    color: #fff
+.intro--options > span:not(:first-child) {
+    padding-left: 10px;
 }
 
 .intro--options h3 {
@@ -1991,5 +1983,8 @@ body {
     }
     .services--block-description {
         font-weight: 300;
+    }
+    .intro--options > span:not(:first-child) {
+        padding-left: 0;
     }
 }
