@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.902 5.485">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #2e2e2e;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #2e2e2e;
+      }
+    </style>
+  </defs>
+  <g id="стрелка" transform="translate(-1270 -805.744)">
+    <path id="Path_6" data-name="Path 6" class="cls-1" d="M-1088,1482.229h34.9" transform="translate(2358 -672)"/>
+    <path id="Path_7" data-name="Path 7" class="cls-2" d="M-1075.17,1481.284l22.03-3.54v4.485" transform="translate(2345.17 -672)"/>
+  </g>
+</svg>

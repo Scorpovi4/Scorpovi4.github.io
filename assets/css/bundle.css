@@ -9688,20 +9688,34 @@ body {
 }
 
 .view-wrapper {
-  max-width: 1440px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   min-width: 320px;
+  max-width: 1440px;
+  overflow-x: hidden;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  padding: 1.5rem 1.5rem 0.5rem;
 }
 
 .view-main {
-  flex: 1 0 auto;
+  min-height: calc(100vh - 152px);
+  display: flex;
+  flex-direction: column;
 }
 
-.view-footer {
-  flex: 0 0 auto;
+.view-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.slick-slide:focus,
+.slick-slide a {
+  outline: none !important;
+}
+
+.slick-slide a {
+  display: block;
 }
 
 .container {
@@ -9717,6 +9731,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  transition: .3s ease-out;
   color: inherit;
 }
 
@@ -9731,35 +9746,43 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.14286rem;
+  line-height: 2.5rem;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.71429rem;
+  line-height: 2.85714rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.57143rem;
+  line-height: 2.5rem;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.28571rem;
+  line-height: 2.14286rem;
 }
 
 h5 {
   font-size: 1rem;
+  line-height: 1.78571rem;
 }
 
 h6 {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.42857rem;
 }
 
-a.active:hover::after {
+a.active:hover::after,
+button.active:hover::after {
   width: 100%;
   transition: width .3s ease-out;
 }
 
-a.active::after {
+a.active::after,
+button.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -9778,7 +9801,43 @@ a.active::after {
 }
 
 h1 .line {
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.14286rem;
+}
+
+h3 .line {
+  margin-bottom: 0.35714rem;
+}
+
+.view-main:not(.index) h3 {
+  margin: 0 0 2.14286rem 0;
+}
+
+.icon-wrapper {
+  position: relative;
+}
+
+.icon-wrapper img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.about .icon-wrapper {
+  max-width: 7.14286rem;
+  height: 7.14286rem;
+  margin: auto;
+}
+
+.doors .icon-wrapper {
+  width: 2.35714rem;
+  height: 0.57143rem;
+}
+
+.doors .icon-wrapper img {
+  transform: scale(-1, 1);
 }
 
 /*Widgets*/
@@ -9799,7 +9858,7 @@ h1 .line {
   left: -100%;
 }
 
-.social-bar > h6 {
+.social-bar > h6:not(:last-child) {
   padding-right: 20px;
 }
 
@@ -9809,20 +9868,17 @@ h1 .line {
   transition: color .3s ease-out;
 }
 
-/*Pages*/
-
-.index .slick-slide {
+.door-slider .slick-slide {
   position: relative;
   text-align: right;
-  outline: none;
   width: 280px;
 }
 
-.index .slick-slide img {
+.door-slider .slick-slide img {
   display: inline;
 }
 
-.index-door-name {
+.door-slider .door {
   position: absolute;
   color: #e0e0e0;
   font-size: 30px;
@@ -9836,65 +9892,223 @@ h1 .line {
   align-items: center;
 }
 
-.index-door-name span {
+.door-slider .door span {
   transform: rotate(-90deg);
 }
+
+.active-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #21c8de;
+  transition: width .3s ease-out;
+}
+
+input {
+  width: 19.28571rem;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5;
+  padding-left: 10px;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  transition: .3s ease-out;
+}
+
+button.calculator-button {
+  width: 19.28571rem;
+  height: 55px;
+  border-radius: 5px;
+  border: 1px solid #2e2e2e;
+  background: #fff;
+  display: block;
+  font-weight: 900;
+}
+
+button.calculator-button:hover {
+  background: #21c8de;
+  border-color: #21c8de;
+  color: #fff;
+  transition: .3s ease-out;
+}
+
+button.calculator-button:active {
+  transform: translateY(3px);
+}
+
+/*Pages*/
 
 .contacts-label {
   font-family: Montserrat;
   font-size: 1.14286rem;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 1.85714rem;
 }
 
 .contacts-phone,
 .contacts-address {
-  font-size: 2.85714rem;
+  font-size: 1.42857rem;
   font-weight: 900;
-  line-height: 3.57143rem;
+  line-height: 2.14286rem;
 }
 
-@media only screen and (min-width: 769px) {
-  h1 {
-    font-size: 3rem;
-  }
+.contacts-show {
+  font-size: 1.14286rem;
+  font-weight: 900;
+  color: #21c8de;
+  line-height: 2.85714rem;
+}
 
-  h2 {
-    font-size: 2.4rem;
-  }
+.contacts-empty {
+  min-height: 200px;
+  background: url("../icons/telephone-call.svg") no-repeat left top;
+}
 
-  h3 {
-    font-size: 1.8rem;
-  }
+.about .slick-slide {
+  outline: none;
+}
 
+.about button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.about-testimonial {
+  max-width: 370px;
+  margin: auto;
+}
+
+.about-testimonial-header {
+  display: flex;
+}
+
+.delivery-buttons > button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.delivery-count {
+  position: relative;
+  display: inline-block;
+}
+
+.delivery-count::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  background: url("../icons/cart.svg") no-repeat;
+  bottom: -100%;
+  left: 0;
+  width: 200px;
+  padding-top: 200px;
+}
+
+.delivery-value {
+  font-size: 3.57143rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 3.57143rem;
+  color: #21c8de;
+}
+
+.doors .slick-slide {
+  width: 290px;
+}
+
+.doors-transition {
+  position: static;
+}
+
+@media only screen and (min-width: 540px) {
   .line {
     display: inline-block;
   }
+
+  .contacts-phone,
+  .contacts-address {
+    font-size: 2.14286rem;
+  }
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 768px) {
   h1 {
-    font-size: 3.6rem;
+    font-size: 2.85714rem;
+    line-height: 3.21429rem;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.14286rem;
   }
 
   h3 {
-    font-size: 2.4rem;
+    font-size: 1.85714rem;
+  }
+
+  h1 .line {
+    margin-bottom: 0.85714rem;
+  }
+
+  h3 .line {
+    margin-bottom: 0.57143rem;
+  }
+
+  .view-main:not(.index) h3 {
+    margin: 0 0 2.14286rem 0;
+  }
+
+  .doors-transition {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 3.57143rem;
+    line-height: 3.92857rem;
+  }
+
+  h2 {
+    font-size: 2.85714rem;
+  }
+
+  h3 {
+    font-size: 2.14286rem;
   }
 
   h4 {
-    font-size: 1.8rem;
+    font-size: 1.71429rem;
   }
 
   h5 {
-    font-size: 1.4rem;
+    font-size: 1.42857rem;
+  }
+
+  .view-main:not(.index) h3 {
+    margin: 0 0 7.14286rem 7.14286rem;
   }
 
   .social-bar {
     transform: rotate(-90deg);
     position: absolute;
+  }
+
+  .contacts-phone,
+  .contacts-address {
+    font-size: 2.85714rem;
+    line-height: 2.85714rem;
   }
 }
