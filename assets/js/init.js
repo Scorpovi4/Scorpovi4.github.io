@@ -60,4 +60,53 @@ $(document).ready(function() {
 	}
 
 	new WOW().init();
+
+	function appear (el, delay = 500) {
+		const childWidth = $(el).width(),
+				childHeight = $(el).height(),
+				parent = $(el).parent(),
+				parentWidth = parent.width();
+
+		$(el).css({
+			width: 0,
+			height: childHeight,
+			overflow: 'hidden'
+		});
+
+		parent.css({
+			background: '#fff',
+			width: 0,
+			overflow: 'hidden'
+		});
+		
+		parent.animate({
+			width: parentWidth,
+		}, 1000, 'easeInQuart', function() {
+			setTimeout(function() {
+				$(el).animate({
+					width: childWidth,
+					overflow: 'auto'
+				}, 400, 'easeInQuart', function() {
+					parent.css({
+						background: 'none',
+						width: 'auto',
+					});
+					$(el).css({
+						width: 'auto',
+						height: 'auto',
+						overflow: 'hidden'
+					});
+				});
+			}, delay);
+		} );
+	}
+
+	$('.js-animation').each(function (i, el) {
+		
+		if ($(el).hasClass('appear')) {
+			appear(el);
+		}
+
+	});
+
 })
