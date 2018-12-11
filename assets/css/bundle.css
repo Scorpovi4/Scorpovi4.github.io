@@ -13351,6 +13351,16 @@ h6 {
   line-height: 1.42857rem;
 }
 
+a.active:hover .icon-wrapper-forward {
+  -webkit-transform: translateX(3px);
+  transform: translateX(3px);
+}
+
+a.active:hover .icon-wrapper-back {
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
 a.active:hover::after,
 button.active:hover::after {
   width: 100%;
@@ -13410,6 +13420,8 @@ h3 .line {
 
 .icon-wrapper {
   position: relative;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
 }
 
 .icon-wrapper img {
@@ -13607,9 +13619,17 @@ ol.list li::before {
 .form-action .button {
   width: 170px;
   height: 55px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-weight: 900;
   border-radius: 5px;
-  border: 0;
   background: #21c8de;
   color: #fff;
   cursor: pointer;
@@ -13997,6 +14017,8 @@ ol.list li::before {
   visibility: visible;
   -webkit-transition: .3s ease-out;
   transition: .3s ease-out;
+  padding: 15px 20px;
+  border-radius: 0 20px 20px;
 }
 
 .double-slider-nav .slick-slide img {
@@ -14011,10 +14033,10 @@ ol.list li::before {
   left: 50%;
   margin-top: 10px;
   color: #fff;
-  padding: 15px 20px;
+  padding: 0;
   -webkit-box-shadow: 0 10px 20px rgba(105, 211, 39, 0.1);
   box-shadow: 0 10px 20px rgba(105, 211, 39, 0.1);
-  border-radius: 0 20px 20px;
+  border-radius: 0;
   background-color: #69d327;
   -webkit-transition: .3s ease-out;
   transition: .3s ease-out;

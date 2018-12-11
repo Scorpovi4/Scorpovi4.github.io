@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 				whole.each(function(i, el) {
 					value = $(el).attr('data-tabContent');
-					$(el).slideUp(700);
+					$(el).slideUp();
 					if (href === value) {
 						$(el).slideDown(700);
 					}
@@ -61,44 +61,42 @@ $(document).ready(function() {
 
 	new WOW().init();
 
-	function appear (el, delay = 500) {
-		const childWidth = $(el).width(),
-				childHeight = $(el).height(),
-				parent = $(el).parent(),
-				parentWidth = parent.width();
+	function appear (el) {
+		const containerWidth = $(el).outerWidth(),
+			  containerHeight = $(el).outerHeight(),
+			  child = $(el).find('.child'),
+			  childWidth = child.width();
 
 		$(el).css({
 			width: 0,
-			height: childHeight,
+			height: containerHeight,
+			background: '#fff',
 			overflow: 'hidden'
 		});
 
-		parent.css({
-			background: '#fff',
+		child.css({
 			width: 0,
 			overflow: 'hidden'
 		});
-		
-		parent.animate({
-			width: parentWidth,
-		}, 1000, 'easeInQuart', function() {
-			setTimeout(function() {
-				$(el).animate({
-					width: childWidth,
-					overflow: 'auto'
-				}, 400, 'easeInQuart', function() {
-					parent.css({
-						background: 'none',
-						width: 'auto',
-					});
-					$(el).css({
-						width: 'auto',
-						height: 'auto',
-						overflow: 'hidden'
-					});
+
+		$(el).animate({
+			width: containerWidth
+		}, 1200, 'easeInQuart', function () {
+			child.animate({
+				width: childWidth
+			}, 500, 'easeInQuart', function() {
+				$(el).css({
+					width: 'auto',
+					height: 'auto',
+					background: 'none',
+					overflow: 'inherit'
 				});
-			}, delay);
-		} );
+				child.css({
+					width: 'auto',
+					overflow: 'inherit'
+				});
+			});
+		});
 	}
 
 	$('.js-animation').each(function (i, el) {
