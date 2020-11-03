@@ -1,0 +1,26 @@
+/*Settings*/
+
+/*Settings*/
+
+/*Mixins*/
+
+.ui-kit__section:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.ui-kit__section-title {
+  margin-bottom: 20px;
+}
+
+.ui-kit__section-element:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.ui-kit__color {
+  height: 50px;
+  padding: 0 25px;
+}
+
+.ui-kit__color > div {
+  flex-basis: 20%;
+}
