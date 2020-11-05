@@ -4,6 +4,11 @@
 
 /*Mixins*/
 
+.ui-kit {
+  padding: 4.375rem 0 3.125rem;
+  position: relative;
+}
+
 .ui-kit__section:not(:last-child) {
   margin-bottom: 24px;
 }
@@ -23,4 +28,10 @@
 
 .ui-kit__color > div {
   flex-basis: 20%;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui-kit {
+    padding: 6.25rem 0 4.375rem;
+  }
 }
