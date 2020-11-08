@@ -4525,6 +4525,14 @@ img.mfp-img {
   opacity: 0;
 }
 
+@font-face {
+  font-family: "slick";
+  src: none;
+  src: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
 .slick-loading .slick-list {
   background: #fff url(../icons/loading.gif) center center no-repeat;
 }
