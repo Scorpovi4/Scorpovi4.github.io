@@ -1,0 +1,51 @@
+/*Settings*/
+
+/*Mixins*/
+
+.view-service__main-info h1 {
+  margin-bottom: 1.25rem;
+}
+
+.view-service__main-info .view-text {
+  margin-bottom: 1.25rem;
+}
+
+.view-service__main-image {
+  font-size: 0;
+}
+
+.view-service__main-image img {
+  border-radius: 4px;
+}
+
+.view-service__main,
+.view-service__e-catalog,
+.view-service__gallery {
+  margin-bottom: 1.875rem;
+}
+
+.view-service__why-us,
+.view-service__discuss {
+  margin-bottom: 1.875rem;
+}
+
+.view-service__how-we-work {
+  margin-bottom: 1.875rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .view-service__main,
+  .view-service__e-catalog,
+  .view-service__gallery {
+    margin-bottom: 4.375rem;
+  }
+
+  .view-service__why-us,
+  .view-service__discuss {
+    margin-bottom: 3.75rem;
+  }
+
+  .view-service__how-we-work {
+    margin-bottom: 2.8125rem;
+  }
+}

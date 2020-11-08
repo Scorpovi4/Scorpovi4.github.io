@@ -67,7 +67,7 @@
   padding: 0.05px;
 }
 
-.view-index__discussing {
+.view-index__discuss {
   margin-top: -24px;
 }
 
@@ -94,7 +94,7 @@
 
 @media only screen and (min-width: 768px) {
   .view-index > section {
-    margin-bottom: 4.375rem;
+    margin-bottom: 3.75rem;
   }
 
   .view-index > section > .title {

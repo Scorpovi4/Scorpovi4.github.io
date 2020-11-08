@@ -1,0 +1,21 @@
+/*Settings*/
+
+/*Mixins*/
+
+.view-article__main {
+  margin-bottom: 1.875rem;
+}
+
+.view-article__another-news {
+  margin-bottom: 1.875rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .view-article__main {
+    margin-bottom: 3.75rem;
+  }
+
+  .view-article__another-news {
+    margin-bottom: 2.8125rem;
+  }
+}
