@@ -4531,6 +4531,7 @@ img.mfp-img {
   src: url("../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .slick-loading .slick-list {
