@@ -1,18 +1,1 @@
-/*Settings*/
-
-/*Mixins*/
-
-.view-about__main,
-.view-about__why-us,
-.view-about__gallery {
-  margin-bottom: 1.875rem;
-  padding-bottom: 0.05px;
-}
-
-@media only screen and (min-width: 768px) {
-  .view-about__main,
-  .view-about__why-us,
-  .view-about__gallery {
-    margin-bottom: 4.375rem;
-  }
-}
+.view-about__gallery,.view-about__main,.view-about__why-us{margin-bottom:1.875rem;padding-bottom:.05px}@media only screen and (min-width:768px){.view-about__gallery,.view-about__main,.view-about__why-us{margin-bottom:4.375rem}}
